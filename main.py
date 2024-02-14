@@ -8,7 +8,7 @@ import re
 import os
 from keep_alive import keep_alive
 
-keep_alive.keep_alive()
+keep_alive()
 
 url = "https://yts.mx/"
 webhook_url = os.environ['WEB_HOOK']
