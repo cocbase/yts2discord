@@ -6,6 +6,7 @@ import pytz
 from datetime import datetime
 import re
 import os
+import keep_alive
 
 url = "https://yts.mx/"
 webhook_url = os.environ['WEB_HOOK']
@@ -42,6 +43,8 @@ def remove_matching_title(title):
         file.seek(0)
         file.writelines(line for line in lines if line.strip() != title)
         file.truncate()
+
+keep_alive.keep_alive()
 
 while True:
     latest_movies = scrape_latest_titles()
